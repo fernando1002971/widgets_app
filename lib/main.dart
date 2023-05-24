@@ -13,7 +13,7 @@ class MainApp extends StatelessWidget {
      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Center(
-          child: Chip(label: Text("fdasdasd")),
+          child:  Text("fdasdasd"),
         ),
       ),
     );
