@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:widgets_app/config/menu/menu_items.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -20,13 +21,12 @@ class _HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  
     return ListView.builder(
       physics: const BouncingScrollPhysics(),
       itemCount: appMenuItems.length,
       itemBuilder: (context, index) {
-          final menuItem = appMenuItems[index];
-          return _CustomListTile(menuItem: menuItem);
+        final menuItem = appMenuItems[index];
+        return _CustomListTile(menuItem: menuItem);
       },
     );
   }
@@ -43,12 +43,16 @@ class _CustomListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final colors = Theme.of(context).colorScheme;
     return ListTile(
-      leading: Icon(menuItem.icon, color: colors.primary,),
+      leading: Icon(
+        menuItem.icon,
+        color: colors.primary,
+      ),
       title: Text(menuItem.title),
       subtitle: Text(menuItem.subtitle),
       trailing: const Icon(Icons.arrow_forward_ios_rounded),
-      onTap: (){},
-      //TODO: Navegar a otras pantallas 
+      onTap: () {
+        context.push(menuItem.link);
+      },
     );
   }
 }
