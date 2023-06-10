@@ -28,8 +28,22 @@ const appMenuItems = <MenuItem>[
   ),
   MenuItem(
     title: "Progress indicators",
-    subtitle: "Generales y controlados",
+    subtitle: "Indicadores de Progreso",
     link: "/progress",
     icon: Icons.refresh_rounded,
   ),
+  MenuItem(
+    title: "Snackbars and Dialogs",
+    subtitle: "Snackbars & Modales",
+    link: "/snackbars",
+    icon: Icons.info_outline,
+  ),
+
+  MenuItem(
+    title: "Animated Container",
+    subtitle: "StatefulWidget animated",
+    link: "/animated",
+    icon: Icons.check_box_outline_blank_rounded,
+  ),
+
 ];
