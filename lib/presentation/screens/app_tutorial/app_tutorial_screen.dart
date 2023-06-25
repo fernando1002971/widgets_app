@@ -27,9 +27,7 @@ final slides = <SlideInfo>[
 
 class AppTutorialScreen extends StatefulWidget {
   static const name = "tutorial_screen";
-
   const AppTutorialScreen({super.key});
-
   @override
   State<AppTutorialScreen> createState() => _AppTutorialScreenState();
 }
@@ -43,7 +41,7 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
 
     pageViewController.addListener(() {
       final page = pageViewController.page ?? 0;
-      if (endReached && page >= (slides.length) - 1.5) {
+      if (!endReached && page >= (slides.length-1.5)) {
         setState(() {
           endReached = true;
         });
@@ -80,6 +78,7 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
                 child: const Text("Salir"),
                 onPressed: () => context.pop(),
               )),
+              
           endReached
               ? Positioned(
                   bottom: 30,
