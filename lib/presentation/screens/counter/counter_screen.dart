@@ -31,7 +31,7 @@ class CounterScreen extends ConsumerWidget {
       ),
       floatingActionButton: FloatingActionButton.extended(
           onPressed: () {
-            //ref.read(counterProvider.notifier).state++;
+           // ref.read(counterProvider.notifier).state++;
             ref.read(counterProvider.notifier).update((state) => state + 1);
           },
           label: const Text("Incrementar"),
